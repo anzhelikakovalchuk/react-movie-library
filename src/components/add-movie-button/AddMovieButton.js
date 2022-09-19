@@ -1,4 +1,5 @@
 import React from 'react';
+import './AddMovieButton.css';
 
 class AddMovieButton extends React.Component {
   constructor(props){
@@ -18,7 +19,7 @@ class AddMovieButton extends React.Component {
     return (
       React.createElement('div', {},
         React.createElement('h1', {}, this.state.numberOfMovies),
-        React.createElement('button', {onClick: this.addMovie}, 'Add a movie'),
+        React.createElement('button', {className: "Button", onClick: this.addMovie}, 'Add a movie'),
       )
     );
   }
