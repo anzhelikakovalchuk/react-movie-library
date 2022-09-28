@@ -1,4 +1,4 @@
-import './App.css';
+import './App.css'
 import AddMovieButton from './components/add-movie-button/AddMovieButton'
 import InputSearch from './components/input-search/InputSearch'
 import React from 'react'

@@ -1,12 +1,10 @@
 import React from 'react'
 import MovieListItem from '../movie-list-item/MovieListItem'
-import "./MovieList.css"
+import './MovieList.css'
 
 function MovieList(props) {
   const { items } = props
-  const movieItems = items.map(movie => {
-    return <MovieListItem item={movie} />
-  })
+  const movieItems = items.map(movie => <MovieListItem item={movie} />)
   
   return (
     <ul className="List">

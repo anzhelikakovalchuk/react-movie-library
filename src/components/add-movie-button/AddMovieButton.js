@@ -1,5 +1,5 @@
-import React from 'react';
-import './AddMovieButton.css';
+import React from 'react'
+import './AddMovieButton.css'
 
 class AddMovieButton extends React.Component {
   constructor(props){
