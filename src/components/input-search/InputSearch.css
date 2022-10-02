@@ -1,0 +1,9 @@
+.Search {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.Search-input {
+  padding: 12px;
+  font-size: 1.8rem;
+}
