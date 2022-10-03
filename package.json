@@ -7,8 +7,7 @@
     "start": "cross-env NODE_ENV=development webpack serve",
     "build": "cross-env NODE_ENV=production webpack",
     "lint": "eslint . --fix --max-warnings=0",
-    "format": "prettier . --write",
-    "prepare": "husky install"
+    "format": "prettier . --write"
   },
   "repository": {
     "type": "git",
@@ -53,5 +52,10 @@
   "lint-staged": {
     "*.js": "eslint --fix ",
     "*.{js,css,md,html,json}": "prettier --cache --write"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
