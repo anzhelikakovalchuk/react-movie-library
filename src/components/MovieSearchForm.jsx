@@ -1,7 +1,7 @@
 import React from 'react'
 
 // import './style.scss'
-import Button from '../button'
+import Button from './Button'
 
 // eslint-disable-next-line react/prefer-stateless-function
 class MovieSearchForm extends React.Component{

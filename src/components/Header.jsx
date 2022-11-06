@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Button from '../button'
-import Title from '../title'
+import Button from './Button'
+import Title from './Title'
 
 function Header () {
   return (

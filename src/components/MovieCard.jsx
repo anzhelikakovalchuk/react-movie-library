@@ -18,7 +18,8 @@ function MovieCard({ movie }) {
         </div>
         <p className="movie-card__genre text-sm">{generes}</p>
       </div>
-    </div>)
+    </div>
+  )
 }
 
 export default MovieCard

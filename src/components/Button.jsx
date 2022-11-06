@@ -1,7 +1,5 @@
 import React from "react";
 
-// import './style.scss'
-
 function Button({ children, theme, onClick }) {
   const ButtonTheme = {
     primary: "bg-red hover:scale-105 text-white rounded px-16 py-4",

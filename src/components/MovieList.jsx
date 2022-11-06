@@ -1,6 +1,6 @@
 import React from 'react'
 
-import MovieCard from '../movie-card'
+import MovieCard from './MovieCard'
 
 function MovieList({ movies }) {
   const movieComponents = movies.map((movie) => (

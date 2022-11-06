@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
-import Tab from "../tab";
-import SortDropdown from '../sort-dropdown'
+import Tab from "./Tab";
+import SortDropdown from './SortDropdown'
 
 class Tabs extends Component {
   constructor(props) {
@@ -54,19 +54,4 @@ class Tabs extends Component {
 }
 
 export default Tabs
-
-//   &:before {
-//       content: '';
-//       display: block;
-//       background: #424242;
-//       height: 3px;
-//       position: absolute;
-//       bottom: -2px;
-//       width: 100%;
-//     }
-
-// &__content {
-//     padding: 16px 0;
-//   }
-// }
 

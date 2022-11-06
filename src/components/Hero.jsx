@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Header from '../header'
-import MovieSearchForm from '../movie-search-form'
+import Header from './Header'
+import MovieSearchForm from './MovieSearchForm'
 
 function Hero () {
   return (

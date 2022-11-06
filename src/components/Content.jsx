@@ -1,13 +1,13 @@
 import React from 'react'
 
-import TabView from '../tab-view'
+import TabView from './TabView'
 
-function App() {
+function Content({ movies }) {
   return (
     <div className="content px-16 mt-2.5 bg-gray-dark flex-1">
-      <TabView />
+      <TabView movies={movies} />
     </div>
   )
 }
 
-export default App
+export default Content
