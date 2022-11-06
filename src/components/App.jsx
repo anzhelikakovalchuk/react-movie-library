@@ -1,54 +1,54 @@
 import React from 'react'
 
-import './style.css'
-import AddMovieButton from './add-movie-button/AddMovieButton'
-import InputSearch from './input-search/InputSearch'
-import WebpackLogo from '../assets/webpack-logo.png'
+import Hero from './Hero'
+import Footer from './Footer'
+import Content from './Content'
+import MovieDetail from './MovieDetail'
 
-const movieList = [
-  'Pulp Fiction',
-  'Bohemian Rhapsody',
-  'Kill Bill',
-  'Avengers: War of Infinity',
-  'Inception',
-  'Reservoir dogs',
-  'Home Alone',
-]
+import movie from '../api/movie'
 
-function App() {
-  return (
-    <div className="App">
-      <img src={WebpackLogo} className="logo" />
-      <h1> Home task 1 </h1>
-      <h2>
-        {' '}
-        Crating Component via <code>React.createElement</code>
-      </h2>
-      <AddMovieButton />
-      <h2> Crating Components with other methods:</h2>
-      <ul className="App-list">
-        <li>
-          <h3>
-            {' '}
-            InputSearch as <code> React.Component </code>{' '}
-          </h3>
-        </li>
-        <li>
-          <h3>
-            {' '}
-            MovieListItem as <code> React.PureComponent </code>{' '}
-          </h3>
-        </li>
-        <li>
-          <h3>
-            {' '}
-            MovieList as <code> Functional Component </code>
-          </h3>{' '}
-        </li>
-      </ul>
-      <InputSearch items={movieList} />
-    </div>
-  )
+class App extends React.Component {
+  constructor(props, context) {
+    super(props, context)
+    this.state = {
+      movies: [],
+      selectedMovie: null
+    }
+  }
+  
+  componentDidMount () {
+    this.onTermSubmit('')
+  }
+  
+  onTermSubmit = async (term) => {
+    const response = await movie.get('/', {
+      params: {
+        q: term
+      }
+    })
+    
+    this.setState({
+      movies: response.data.data,
+      selectedMovie: response.data.data[0]
+    })
+  }
+  
+  onMovieSelect = (video) => {
+    this.setState({ selectedMovie: video })
+  }
+  
+  render () {
+    const { movies, selectedMovie } = this.state
+    
+    return (
+      <div className="App min-h-screen flex flex-col justify-between bg-gray-light">
+        <Hero onFormSubmit={this.onTermSubmit}/>
+        <MovieDetail video={selectedMovie} />
+        <Content movies={movies} onMovieSelect={this.onMovieSelect} />
+        <Footer />
+      </div>
+    )
+  }
 }
 
 export default App
